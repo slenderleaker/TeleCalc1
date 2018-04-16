@@ -20,25 +20,25 @@ namespace ITUniver.TeleCalc.ConCalc
                 switch (args[0].ToLower())
                 {
                     case "sum":
-                        Console.WriteLine((Double)Calculator.Sum(x, y));
+                        Console.WriteLine((double)Calculator.Sum(x, y));
                         break;
                     case "sub":
-                        Console.WriteLine((Double)Calculator.Sub(x, y));
+                        Console.WriteLine((double)Calculator.Sub(x, y));
                         break;
                     case "mul":
-                        Console.WriteLine((Double)Calculator.Mul(x, y));
+                        Console.WriteLine((double)Calculator.Mul(x, y));
                         break;
                     case "div":
-                        Console.WriteLine((Double)Calculator.Div(x, y));
+                        Console.WriteLine((double)Calculator.Div(x, y));
                         break;
                     case "mod":
-                        Console.WriteLine((Double)Calculator.Mod(x, y));
+                        Console.WriteLine((double)Calculator.Mod(x, y));
                         break;
                     case "exp":
-                        Console.WriteLine((Double)Calculator.Exp(x, y));
+                        Console.WriteLine((double)Calculator.Exp(x, y));
                         break;
                     default:
-                        Console.WriteLine("Операция не существует в данном контексте");
+                        Console.WriteLine("Операция не существует");
                         break;
                  }
             } else
