@@ -19,7 +19,7 @@ namespace ITUniver.TeleCalc.ConCalc
                 var spisok = acc.operationPub();
                 foreach (var item in spisok)
                 {
-                    Console.WriteLine(item.Name + "\n");
+                    Console.WriteLine(item.Name);
                 }
                 
                 Console.ReadKey();
