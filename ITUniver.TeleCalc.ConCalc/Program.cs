@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ITUniver.TeleCalc.Core;
 
-namespace ITUniver.TeleCalc.ConCalc
+namespace ITUniver.TeleCalc.Core
 {
     class Program
     {
@@ -13,24 +13,36 @@ namespace ITUniver.TeleCalc.ConCalc
         {
             
             var acc = new Calc();
-            
-            if (args.Length != 3)
+            string opName = "";
+            double x;
+            double y;
+            if (args.Length == 3)
             {
-                var spisok = acc.operationPub();
-                foreach (var item in spisok)
-                {
-                    Console.WriteLine(item.Name);
-                }
+                opName = args[0].ToLower();
+                x = double.Parse(args[1]);
+                y = double.Parse(args[2]);
+            }
+            else
+            {
+                Console.WriteLine("Pick operation...");
                 
-                Console.ReadKey();
-                return;
+                foreach (var item in acc.getOperNames())
+                {
+<<<<<<< web
+                    Console.WriteLine(item.Name);
+=======
+                    Console.WriteLine(item);
+>>>>>>> local
+                }
+
+            opName = Console.ReadLine().ToLower();
+            Console.WriteLine("Write params");
+            var data = Console.ReadLine().Split(' ');
+            x = double.Parse(data[0]);
+            y = double.Parse(data[1]);
             }
 
-            string opName = args[0].ToLower();
-            double x = double.Parse(args[1]);
-            double y = double.Parse(args[2]);
             double? con = acc.Exec(opName, x, y);
-
             Console.WriteLine(string.Format("{0}{1}{2} = {3}", x, opName, y, con));
             Console.ReadKey();
 

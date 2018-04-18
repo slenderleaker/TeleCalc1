@@ -15,13 +15,7 @@ namespace ITUniver.TeleCalc.Core.Operations
         {
             set
             {
-                var sqrt = 0d;
-                foreach (var item in value)
-                {
-                    sqrt = Math.Sqrt(sqrt);
-
-                }
-                Result = sqrt;
+                Result = value.Aggregate((x, y) => Math.Sqrt(x));
             }
             get
             {

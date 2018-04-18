@@ -15,12 +15,7 @@ namespace ITUniver.TeleCalc.Core.Operations
         {
             set
             {
-                var sub = 0d;
-                foreach (var item in value)
-                {
-                    sub = sub - item;
-                }
-                Result = sub;
+                Result = value.Aggregate((x, y) => x - y);
             }
             get
             {

@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 using ITUniver.TeleCalc.Core.Operations;
 using System.Reflection;
 
-namespace ITUniver.TeleCalc.ConCalc
+namespace ITUniver.TeleCalc.Core
 {
     public class Calc
     {
         private IOperation[] operations { get; set; }
 
+        public IEnumerable<string> getOperNames()
+        {
+            return operations.Select(o => o.Name);
+        }
         public Calc()
         {
             var opers = new List<IOperation>();
@@ -47,11 +51,6 @@ namespace ITUniver.TeleCalc.ConCalc
             
             operation.Args = new double[] { x, y };
             return  (double)operation.Result;
-        }
-
-        public IOperation[] operationPub()
-        {
-            return operations;
         }
 
         #region OldOperations

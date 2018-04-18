@@ -15,13 +15,7 @@ namespace ITUniver.TeleCalc.Core.Operations
         {
             set
             {
-                var exp = 0d;
-                foreach (var item in value)
-                {
-                    exp = Math.Pow(exp, item);
-
-                }
-                Result = exp;
+                Result = value.Aggregate((x, y) => Math.Pow(x,y));
             }
             get
             {
